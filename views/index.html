@@ -1,0 +1,56 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+    <head>
+        <title>Add data</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    </head>
+    <body>
+
+        <div class="container">
+
+            <br />
+            <H1>Logs in Database</H1>
+            <table class="table table-striped">
+                <tr>
+                    <th>timestamp </th>
+                    <th>action </th>
+                    <th>label</th>
+                    <th>value</th>
+                </tr>
+                {% for log in logs %}
+                <tr>
+                    <td>{{log.timestamp}}</td>
+                    <td>{{log.action}}</td>
+                    <td>{{log.label}}</td>
+                    <td>{{log.value}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+            <hr>
+
+            <h1>Enter details below to add your movie</h1>
+            <form action="/" method="POST" role='form'>
+                <div class="form-group">
+                    <label for="logTimestamp">Timestamp</label>
+                    <input type="text" class="form-control" name="logTimestamp" id="logTimestamp" placeholder="Timestamp" required>
+                </div>
+                <div class="form-group">
+                    <label for="logAction">Action</label>
+                    <input type="text" class="form-control" name="logAction" id="logAction" placeholder="Action" required>
+                </div>
+                <div class="form-group">
+                    <label for="logLabel">Label</label>
+                   <input type="text" class="form-control" name="logLabel" id="logLabel" placeholder="Label" required>
+                </div>
+                <div class="form-group">
+                    <label for="logValue">Value</label>
+                   <input type="text" class="form-control" name="logValue" id="logValue" placeholder="Value" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+    </body>
+</html>
